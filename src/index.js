@@ -3,7 +3,7 @@ let allParagraphs = [];
 
 const body = document.querySelector("body");
 const textBox = document.querySelector(".text");
-const a = document.querySelector("a");
+const downloadLink = document.querySelector("a.download");
 
 updateText = () => {
   textBox.textContent = currentParagraph.join("");
@@ -27,10 +27,10 @@ body.onkeypress = event => {
   updateText();
 };
 
-a.onclick = event => {
+downloadLink.onclick = event => {
   const plainText = allParagraphs.reduce(
     (acc, paragraph) => acc + paragraph.join("") + "\n\n",
     ""
   );
-  event.target.href = "data:," + encodeURI(plainText);
+  event.target.href = "data:text/plain," + encodeURI(plainText);
 };
