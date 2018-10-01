@@ -23,7 +23,6 @@ body.onkeypress = event => {
   } else {
     currentParagraph.push(event.key);
   }
-  console.log(allParagraphs);
   updateText();
 };
 
