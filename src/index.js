@@ -14,13 +14,14 @@ updateText = () => {
   }
 };
 
-body.onkeypress = event => {
+body.onkeydown = event => {
+  console.log(event);
   if (event.key === "Backspace") {
     currentParagraph = currentParagraph.slice(0, currentParagraph.length - 1);
   } else if (event.key === "Enter") {
     allParagraphs.push(currentParagraph);
     currentParagraph = [];
-  } else {
+  } else if (event.key.length === 1) {
     currentParagraph.push(event.key);
   }
   updateText();
