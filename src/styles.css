@@ -1,0 +1,69 @@
+:root {
+  --font-size: 6rem;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  background-color: lightgray;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  height: calc(var(--font-size) + 1rem);
+  width: 50%;
+  margin-left: 0;
+  overflow: hidden;
+  font-size: var(--font-size);
+  color: darkgray;
+  text-align: right;
+  white-space: nowrap;
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  right: 0;
+}
+
+.text--trailing-space {
+  margin-right: 1rem;
+  margin-left: -1rem;
+}
+
+.caret {
+  height: var(--font-size);
+  width: 0.2em;
+  background-color: darkgray;
+  animation: blink 1s infinite;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+a {
+  align-self: flex-end;
+  margin: 1rem;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  49% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
