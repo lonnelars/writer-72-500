@@ -28,9 +28,9 @@ body.onkeypress = event => {
 };
 
 a.onclick = event => {
-  const text = allParagraphs.reduce(
-    (acc, paragraph) => acc + paragraph.join("") + "\n",
+  const plainText = allParagraphs.reduce(
+    (acc, paragraph) => acc + paragraph.join("") + "\n\n",
     ""
   );
-  event.target.href = "data:," + encodeURI(text);
+  event.target.href = "data:," + encodeURI(plainText);
 };
