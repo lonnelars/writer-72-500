@@ -28,9 +28,12 @@ body.onkeypress = event => {
 };
 
 downloadLink.onclick = event => {
-  const plainText = allParagraphs.reduce(
-    (acc, paragraph) => acc + paragraph.join("") + "\n\n",
-    ""
-  );
+  const plainText =
+    allParagraphs.reduce(
+      (acc, paragraph) => acc + paragraph.join("") + "\n\n",
+      ""
+    ) +
+    "\n\n" +
+    currentParagraph.join("");
   event.target.href = "data:text/plain," + encodeURI(plainText);
 };
