@@ -5,7 +5,7 @@ const body = document.querySelector("body");
 const textBox = document.querySelector(".text");
 const downloadLink = document.querySelector("a.download");
 
-updateText = () => {
+const updateText = () => {
   textBox.textContent = currentParagraph.join("");
   if (currentParagraph[currentParagraph.length - 1] === " ") {
     textBox.classList.add("text--trailing-space");
@@ -14,14 +14,15 @@ updateText = () => {
   }
 };
 
+const isPrintable = key => key.length === 1;
+
 body.onkeydown = event => {
-  console.log(event);
   if (event.key === "Backspace") {
     currentParagraph = currentParagraph.slice(0, currentParagraph.length - 1);
   } else if (event.key === "Enter") {
     allParagraphs.push(currentParagraph);
     currentParagraph = [];
-  } else if (event.key.length === 1) {
+  } else if (isPrintable(event.key)) {
     currentParagraph.push(event.key);
   }
   updateText();
