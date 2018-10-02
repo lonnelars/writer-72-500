@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  writer-72-500:
+    volumes:
+      - ./src:/usr/share/nginx/html
